@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Together With Their Families | Poonam & Rahul</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-cream: #FFFDF6;
+            --text-maroon: #800000;
+            --accent-gold: #D4AF37;
+            --font-cursive: 'Great Vibes', cursive;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-cream);
+            color: #333;
+            font-family: var(--font-body);
+            overflow: hidden; /* Scroll locked until open */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23800000' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+      .gold-text {
+            background: linear-gradient(to right, #462523 0, #cb9b51 22%, #f6e27a 45%, #f6f2c0 50%, #f6e27a 55%, #cb9b51 78%, #462523 100%);
+            -webkit-background-clip: text; background-clip: text; color: transparent; display: inline-block;
+        }
+
+        /* NEW SHAHI OVERLAY ANIMATION */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-cream);
+            z-index: 10000; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            transition: transform 1.2s cubic-bezier(0.7, 0, 0.3, 1), opacity 1s;
+        }
+      .preloader-hidden { transform: translateY(-100%)!important; opacity: 0; pointer-events: none; }
+
+      .open-btn {
+            background: var(--text-maroon); color: white; border: 2px solid var(--accent-gold);
+            padding: 20px 45px; font-family: var(--font-heading); text-transform: uppercase;
+            letter-spacing: 3px; cursor: pointer; border-radius: 50px; font-size: 1rem;
+            box-shadow: 0 10px 40px rgba(128,0,0,0.3); transition: 0.4s; margin-top: 30px;
+        }
+      .open-btn:hover { transform: scale(1.1); background: var(--dark-maroon); }
+
+        /* Falling Petals Particle Effect */
+      .petal-particle {
+            position: fixed; top: -10%; user-select: none; pointer-events: none; z-index: 500;
+            background: linear-gradient(to bottom right, #ffb7b7, #800000);
+            border-radius: 50% 0 50% 50%; opacity: 0.6;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(110vh) rotate(360deg); }
+        }
+
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 15px;
+            background: rgba(255, 253, 246, 0.9); backdrop-filter: blur(10px);
+            display: flex; justify-content: center; gap: 20px; z-index: 1000;
+        }
+        nav a { text-decoration: none; color: var(--text-maroon); font-family: var(--font-heading); font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        section { padding: 100px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
+      .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+      .hero h1 { font-family: var(--font-cursive); font-size: 8rem; color: var(--text-maroon); margin: 20px 0; }
+        
+      .btn-row { display: flex; gap: 15px; margin-top: 30px; }
+      .btn { padding: 12px 25px; border-radius: 50px; font-family: var(--font-heading); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; cursor: pointer; transition: 0.3s; text-decoration: none; border: none; }
+      .btn-gold { background: var(--accent-gold); color: white; }
+      .btn-outline { border: 2px solid var(--text-maroon); color: var(--text-maroon); background: transparent; }
+
+      .section-title { font-family: var(--font-cursive); font-size: 4.5rem; color: var(--accent-gold); margin-bottom: 50px; }
+
+        /* Family Section */
+      .family-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+      .family-card { background: white; padding: 50px 30px; border-radius: 15px; border-top: 6px solid var(--text-maroon); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+      .family-card h3 { font-family: var(--font-heading); color: var(--text-maroon); font-size: 1.8rem; margin-bottom: 20px; }
+      .family-card p { line-height: 1.8; color: #555; font-size: 1.1rem; }
+
+        /* Timeline */
+      .tl-item { max-width: 750px; margin: 0 auto 25px; background: white; padding: 30px; border-radius: 12px; border-left: 5px solid var(--text-maroon); box-shadow: 0 5px 20px rgba(0,0,0,0.03); text-align: left; }
+      .tl-date { color: var(--text-maroon); font-weight: 700; display: block; margin-bottom: 5px; font-size: 1rem; }
+
+        /* Gallery Grid */
+      .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+      .gallery-item { height: 350px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+      .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; cursor: pointer; }
+      .gallery-item:hover img { transform: scale(1.1); }
+
+        /* Map Fix */
+      .map-container { height: 500px; border-radius: 20px; overflow: hidden; border: 2px solid var(--accent-gold); margin-top: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+
+      .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.2, 1, 0.3, 1); }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        footer { background: var(--text-maroon); color: var(--bg-cream); padding: 80px 20px; text-align: center; }
+        #audio-ctrl { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: white; border-radius: 50%; border: 2px solid var(--text-maroon); cursor: pointer; z-index: 1000; font-size: 25px; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 20px rgba(0,0,0,0.2); }
+
+        @media (max-width: 768px) {
+          .hero h1 { font-size: 3.5rem; }
+          .btn-row { flex-direction: column; width: 100%; padding: 0 30px; }
+        }
+    </style>
+</head>
+<body class="curtain-closed">
+
+    <div id="preloader">
+        <p style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 5px; font-size: 0.8rem; color: var(--accent-gold);">Shubh Vivah</p>
+        <h2 style="font-family: var(--font-cursive); font-size: 4rem; color: var(--text-maroon); margin-bottom: 20px;">Poonam & Rahul</h2>
+        <button class="open-btn" onclick="startExperience()">Open Invitation</button>
+        <p style="margin-top:20px; font-size:0.6rem; letter-spacing:3px; color:var(--text-maroon); text-transform:uppercase;">Click for Music & Magic</p>
+    </div>
+
+    <nav>
+        <a href="#hero">Home</a>
+        <a href="#family">Family</a>
+        <a href="#events">Itinerary</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#location">Venue</a>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="reveal">
+            <p style="font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 3px; font-size: 0.9rem;">|| Shree Ganeshay Namah ||</p>
+            <p style="margin-top:20px; text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; color:#666;">Together with their families</p>
+            <h1 class="gold-text">Poonam & Rahul</h1>
+            <p style="text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem;">Request the honor of your presence</p>
+            
+            <div class="btn-row">
+                <a href="#events" class="btn btn-gold">Wedding Itinerary</a>
+                <a href="#gallery" class="btn btn-outline">Explore Moments</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="family">
+        <h2 class="section-title reveal">The Families</h2>
+        <div class="family-grid">
+            <div class="family-card reveal">
+                <h3>Poonam's Family</h3>
+                <p><strong>With the blessings of:</strong><br>Smt. Motilal Ji Hajare</p><br>
+                <p><strong>Parents:</strong><br>Mrs. Rekha Hajare & Mr. Balwant Ji Hajare</p>
+            </div>
+            <div class="family-card reveal">
+                <h3>Rahul's Family</h3>
+                <p><strong>With the blessings of:</strong><br>Smt. Maroti Ji Kirankar</p><br>
+                <p><strong>Parents:</strong><br>Mrs. Uma bai & Mr. Harish ji kirankar</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="events">
+        <h2 class="section-title reveal">Wedding Itinerary</h2>
+        
+        <div class="tl-item reveal">
+            <span class="tl-date">18 April 2026</span>
+            <h3>Tilak Ceremony</h3>
+            <p><strong>Time:</strong> 11:00 AM</p>
+            <p><strong>Venue:</strong> Behind the Saikripa college, Betul road Multai</p>
+        </div>
+
+        <div class="tl-item reveal">
+            <span class="tl-date">19 April 2026</span>
+            <h3>Haldi & Mehndi</h3>
+            <p><strong>Time:</strong> 7:00 PM</p>
+            <p><strong>Venue:</strong> Bhadus (Shadi Wala Ghar)</p>
+        </div>
+
+        <div class="tl-item reveal">
+            <span class="tl-date">20 April 2026</span>
+            <h3>The Wedding</h3>
+            <p><strong>Time:</strong> 11:00 AM</p>
+            <p><strong>Venue:</strong> NH 59A BHADUS, BEHIND DURGA MANDIR</p>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2 class="section-title reveal">Sweet Moments</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1583939000340-6e11894d9302?w=600" alt="1"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1603525283597-26839352e809?w=600" alt="2"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1550005809-91ad75b66304?w=600" alt="3"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1590487042502-d9ee7d6af48f?w=600" alt="4"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=600" alt="5"></div>
+            <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600" alt="6"></div>
+        </div>
+    </section>
+
+    <section id="location">
+        <h2 class="section-title reveal">Venue Location</h2>
+        <div class="map-container reveal">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3688.36!2d78.2575!3d22.419!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397d91e63a159981%3A0x6b3f72cd27150060!2sBhadus%2C%20Madhya%20Pradesh%20460663!5e0!3m2!1sen!2sin!4v1711311700000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="font-family: var(--font-cursive); font-size: 3rem; color: var(--accent-gold);">Thank You!</h2>
+        <p>We look forward to celebrating with you.</p>
+        <p style="margin-top: 30px; font-size: 0.75rem; opacity: 0.5;">© 2026 Poonam & Rahul | Bhadus</p>
+    </footer>
+
+    <button id="audio-ctrl" onclick="togglePlay()">🔇</button>
+    <audio id="invite-music" loop>
+        <source src=video_260325_005447.mp3
+    </audio>
+
+    <script>
+        let isPlaying = false;
+        const mus = document.getElementById('invite-music');
+        const btn = document.getElementById('audio-ctrl');
+
+        // 1. START EXPERIENCE (Satisfies Autoplay Policy + Animation Fix)
+        function startExperience() {
+            const pre = document.getElementById('preloader');
+            pre.classList.add('preloader-hidden');
+            document.body.style.overflowY = "auto";
+            
+            // Start Music after interaction
+            mus.play().then(() => {
+                isPlaying = true;
+                btn.innerHTML = '🎶';
+            }).catch(e => console.log("Music blocked - convert YouTube to MP3 for best results."));
+
+            // Start Falling Petals
+            const petalInterval = setInterval(createPetal, 350);
+            setTimeout(() => { clearInterval(petalInterval); }, 10000); // Stops after 10s
+        }
+
+        function createPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'petal-particle';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 3 + 3 + 's';
+            petal.style.width = Math.random() * 15 + 10 + 'px';
+            petal.style.height = petal.style.width;
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 6000);
+        }
+
+        // 2. Scroll Reveal Logic
+        const obs = new IntersectionObserver((es) => {
+            es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // 3. Manual Toggle
+        function togglePlay() {
+            if (isPlaying) { mus.pause(); btn.innerHTML = '🔇'; } 
+            else { mus.play().catch(() => {}); btn.innerHTML = '🎶'; }
+            isPlaying =!isPlaying;
+        }
+    </script>
+</body>
+</html>
